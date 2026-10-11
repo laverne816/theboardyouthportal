@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+/* ==========================================================
+   MUTED PLUM & ROSE
+   Colour-only theme override
+   Preserve layout, typography, sizing and functionality
+   ========================================================== */
+
+:root {
+  --bg-dark: #100D16;
+  --bg-card: rgba(33, 25, 37, 0.92);
+  --bg-card-border: rgba(73, 52, 73, 0.85);
+
+  --text-main: #F1EAF2;
+  --text-muted: #B6AAB9;
+
+  --accent-pink: #D99AB8;
+  --accent-lavender: #B6A0D1;
+  --accent-cyan: #91B8CC;
+
+  /* Disable the old pink glow colour */
+  --accent-glow: transparent;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Animation */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main page background and text */
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Cards and panels: muted plum, without neon borders */
+.bg-card,
+.card,
+.cyber-card,
+.project-card,
+.skill-card,
+.certificate-card,
+.experience-card,
+.contact-card {
+  background-color: var(--bg-card);
+  border-color: var(--bg-card-border);
+}
+
+.cyber-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-card-border);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.35);
+  transition: var(--transition);
+}
+
+.cyber-card:hover {
+  border-color: var(--accent-pink);
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.cyber-card-cyan:hover {
+  border-color: var(--accent-cyan);
+}
+
+.cyber-card-lavender:hover {
+  border-color: var(--accent-lavender);
+}
+
+/* Navigation: retain existing position and dimensions */
+nav,
+.navbar {
+  background-color: rgba(16, 13, 22, 0.96);
+  border-color: var(--bg-card-border);
+}
+
+.nav-links a,
+nav a,
+.navbar a {
+  color: var(--text-muted);
+  text-shadow: none;
+}
+
+.nav-links a:hover,
+nav a:hover,
+.navbar a:hover {
+  color: var(--accent-pink);
+  text-shadow: none;
+}
+
+/* Headings, links and accent text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading,
+.font-display {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-shadow: none;
+}
+
+a {
+  color: var(--accent-lavender);
+}
+
+a:hover {
+  color: var(--accent-pink);
+}
+
+/* Replace neon gradient text with a solid muted accent */
+.gradient-text {
+  background: none;
+  background-image: none;
+  color: var(--accent-pink);
+  -webkit-text-fill-color: var(--accent-pink);
+  text-shadow: none;
+}
+
+/* Buttons: preserve existing dimensions and interaction */
+.btn-primary,
+button.btn-primary {
+  background: var(--accent-pink);
+  background-image: none;
+  color: #211525;
+  border-color: var(--accent-pink);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover {
+  background: #C989A8;
+  background-image: none;
+  color: #211525;
+  box-shadow: none;
+}
+
+/* Secondary and outlined buttons */
+.btn-secondary,
+.btn-outline,
+button.btn-secondary {
+  background-color: transparent;
+  background-image: none;
+  color: var(--accent-lavender);
+  border-color: var(--accent-lavender);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover,
+button.btn-secondary:hover {
+  background-color: rgba(182, 160, 209, 0.10);
+  color: var(--text-main);
+  box-shadow: none;
+}
+
+/* Badges and small labels */
+.hero-badge,
+.badge-accent,
+.skill-chip {
+  background-color: rgba(217, 154, 184, 0.10);
+  border-color: var(--bg-card-border);
+  color: var(--accent-pink);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.skill-chip:hover {
+  background-color: rgba(217, 154, 184, 0.16);
+  border-color: var(--accent-pink);
+  box-shadow: none;
+}
+
+/* Timeline: keep its existing structure and dimensions */
+.timeline-item {
+  border-color: var(--bg-card-border);
+}
+
+.timeline-dot {
+  background-color: var(--accent-pink);
+  border-color: var(--bg-dark);
+  box-shadow: none;
+}
+
+/* Form fields */
+input,
+textarea,
+select {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border-color: var(--bg-card-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-lavender);
+  box-shadow: none;
+  outline-color: var(--accent-lavender);
+}
+
+/* Remove decorative background glow orbs without changing layout */
+.bg-orb {
+  opacity: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Remove neon text and drop-shadow effects */
+.gradient-text,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.hero-badge,
+.badge-accent,
+.skill-chip,
+.timeline-dot {
+  text-shadow: none !important;
+  filter: none;
+}
+
+/* Remove glow-style shadows from interactive elements */
+.btn-primary,
+.btn-primary:hover,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-outline,
+.btn-outline:hover,
+.skill-chip,
+.skill-chip:hover,
+.timeline-dot,
+.glow-pink,
+.glow-cyan,
+.glow-lavender {
+  box-shadow: none !important;
+}
+
+/* Keep card borders subtle and consistent */
+.project-card,
+.skill-card,
+.certificate-card,
+.experience-card,
+.contact-card {
+  border-color: var(--bg-card-border);
+}
+
+/* Background grid: Muted Plum & Rose ambiance */
+.bg-cyber-grid {
+  background-color: #100D16;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(182, 160, 209, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(217, 154, 184, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(145, 184, 204, 0.04) 0%, transparent 50%),
+    linear-gradient(to right, rgba(73, 52, 73, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(73, 52, 73, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Scrollbar Styling in Muted Plum */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #100D16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(73, 52, 73, 0.85);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D99AB8;
+}

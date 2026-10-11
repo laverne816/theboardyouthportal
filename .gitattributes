@@ -1,0 +1,12 @@
+# Override GitHub Linguist language detection so repository language stats show HTML
+# Treat TypeScript, JavaScript, and TSX files as vendored / documentation so they are not counted in GitHub language stats
+*.ts linguist-detectable=false
+*.tsx linguist-detectable=false
+*.js linguist-detectable=false
+*.jsx linguist-detectable=false
+*.json linguist-detectable=false
+*.css linguist-detectable=false
+
+# Mark HTML files as primary detectable language
+*.html linguist-detectable=true
+*.html linguist-language=HTML

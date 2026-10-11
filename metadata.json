@@ -1,0 +1,8 @@
+{
+  "name": "THE BOARD — SA Youth Opportunities Portal",
+  "description": "A verified youth opportunities portal for young South Africans. Jobs, learnerships, internships, bursaries, courses, and career events. Your future, pinned.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
