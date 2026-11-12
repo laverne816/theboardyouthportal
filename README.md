@@ -1,7 +1,7 @@
 # THE BOARD
 South African Youth Opportunities Portal
 
-THE BOARD is a responsive youth opportunity and skills portal designed to help young South Africans discover jobs, learnerships, internships, bursaries, courses, and career events. It features searchable opportunities, smart filters, and career-readiness resources to make finding and accessing opportunities easier.
+THE BOARD is a responsive platform that connects young South Africans with opportunities such as jobs, internships, learnerships, bursaries, courses, and career events. It offers easy opportunity discovery through search and filtering tools, alongside helpful career resources to support young people in preparing for their future.
 
 ## Preview
 https://theboardyouthportal.netlify.app/
